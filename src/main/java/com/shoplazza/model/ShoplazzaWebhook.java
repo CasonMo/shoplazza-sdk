@@ -1,13 +1,21 @@
 package com.shoplazza.model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class ShoplazzaWebhook {
 	private String address;
+	@XmlElement(name = "created_at")
+	private Date createdAt;
+	@XmlElement(name = "updated_at")
 	private Date updatedAt;
 	private String format;
 	private String topic;
-	private Date createdAt;
 	private String id;
 
 	private ShoplazzaWebhook(Builder builder) {
