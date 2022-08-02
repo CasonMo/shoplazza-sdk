@@ -45,7 +45,7 @@ public class ShoplazzaSdk {
     static final String RETRY_AFTER_HEADER = "Retry-After";
     static final String ACCESS_TOKEN_HEADER = "Access-Token";
     static final String PRODUCTS = "products";
-    static final String WEBHOOK = "webhook";
+    static final String WEBHOOKS = "webhooks";
     static final String ORDERS = "orders";
     static final String REFUND = "refund";
     static final String COUNT = "count";
@@ -499,13 +499,13 @@ public class ShoplazzaSdk {
     // webhook 相关api
 
     public ShoplazzaWebhook getWebhook(final String id) {
-        final Response response = get(getWebTarget().path(WEBHOOK).path(id));
+        final Response response = get(getWebTarget().path(WEBHOOKS).path(id));
         final ShoplazzaWebhookRoot root = response.readEntity(ShoplazzaWebhookRoot.class);
         return root.getWebhook();
     }
 
     public List<ShoplazzaWebhook> getWebhooks(final GetWebhookRequest request) {
-        WebTarget webTarget = getWebTarget().path(WEBHOOK);
+        WebTarget webTarget = getWebTarget().path(WEBHOOKS);
         if (request != null) {
             Map<String, String> map = JsonUtils.toJavaObject(JsonUtils.toJSONString(request), new TypeReference<Map<String, String>>() {
             });
@@ -521,26 +521,26 @@ public class ShoplazzaSdk {
     }
 
     public ShoplazzaWebhook createWebhook(final CreateWebhookRequest request) {
-        final Response response = post(getWebTarget().path(WEBHOOK), request);
+        final Response response = post(getWebTarget().path(WEBHOOKS), request);
         final ShoplazzaWebhookRoot root = response.readEntity(ShoplazzaWebhookRoot.class);
         final ShoplazzaWebhook obj = root.getWebhook();
         return obj;
     }
 
     public ShoplazzaWebhook updateWebhook(final String id,final UpdateWebhookRequest request) {
-        final Response response = put(getWebTarget().path(WEBHOOK).path(id), request);
+        final Response response = put(getWebTarget().path(WEBHOOKS).path(id), request);
         final ShoplazzaWebhookRoot root = response.readEntity(ShoplazzaWebhookRoot.class);
         final ShoplazzaWebhook obj = root.getWebhook();
         return obj;
     }
 
     public boolean deleteWebhook(final String id) {
-        final Response response = delete(getWebTarget().path(WEBHOOK).path(id));
+        final Response response = delete(getWebTarget().path(WEBHOOKS).path(id));
         return Status.OK.getStatusCode() == response.getStatus();
     }
 
     public Integer getWebhookCount(final GetWebhookCountRequest request) {
-        WebTarget webTarget = getWebTarget().path(WEBHOOK).path(COUNT);
+        WebTarget webTarget = getWebTarget().path(WEBHOOKS).path(COUNT);
         if (request != null) {
             Map<String, String> map = JsonUtils.toJavaObject(JsonUtils.toJSONString(request), new TypeReference<Map<String, String>>() {
             });
