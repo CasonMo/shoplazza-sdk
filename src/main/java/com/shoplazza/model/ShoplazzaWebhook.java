@@ -1,11 +1,13 @@
 package com.shoplazza.model;
 
+import java.util.Date;
+
 public class ShoplazzaWebhook {
 	private String address;
-	private String updatedAt;
+	private Date updatedAt;
 	private String format;
 	private String topic;
-	private String createdAt;
+	private Date createdAt;
 	private String id;
 
 	private ShoplazzaWebhook(Builder builder) {
@@ -29,11 +31,11 @@ public class ShoplazzaWebhook {
 		this.address = address;
 	}
 
-	public String getUpdatedAt() {
+	public Date getUpdatedAt() {
 		return updatedAt;
 	}
 
-	public void setUpdatedAt(String updatedAt) {
+	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
 
@@ -53,11 +55,11 @@ public class ShoplazzaWebhook {
 		this.topic = topic;
 	}
 
-	public String getCreatedAt() {
+	public Date getCreatedAt() {
 		return createdAt;
 	}
 
-	public void setCreatedAt(String createdAt) {
+	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
 
@@ -71,10 +73,10 @@ public class ShoplazzaWebhook {
 
 	public static final class Builder {
 		private String address;
-		private String updatedAt;
+		private Date updatedAt;
 		private String format;
 		private String topic;
-		private String createdAt;
+		private Date createdAt;
 		private String id;
 
 		private Builder() {
@@ -85,7 +87,7 @@ public class ShoplazzaWebhook {
 			return this;
 		}
 
-		public Builder withUpdatedAt(String val) {
+		public Builder withUpdatedAt(Date val) {
 			updatedAt = val;
 			return this;
 		}
@@ -100,7 +102,7 @@ public class ShoplazzaWebhook {
 			return this;
 		}
 
-		public Builder withCreatedAt(String val) {
+		public Builder withCreatedAt(Date val) {
 			createdAt = val;
 			return this;
 		}
