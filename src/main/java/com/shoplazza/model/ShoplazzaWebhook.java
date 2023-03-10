@@ -18,6 +18,9 @@ public class ShoplazzaWebhook {
 	private String topic;
 	private String id;
 
+	public ShoplazzaWebhook() {
+	}
+
 	private ShoplazzaWebhook(Builder builder) {
 		setAddress(builder.address);
 		setUpdatedAt(builder.updatedAt);

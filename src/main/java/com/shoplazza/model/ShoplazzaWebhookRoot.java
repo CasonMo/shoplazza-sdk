@@ -13,6 +13,9 @@ public class ShoplazzaWebhookRoot {
 		setWebhook(builder.webhook);
 	}
 
+	public ShoplazzaWebhookRoot() {
+	}
+
 	public static Builder builder() {
 		return new Builder();
 	}

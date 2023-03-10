@@ -25,6 +25,9 @@ public class UpdateWebhookRequest {
      */
     private String topic;
 
+    public UpdateWebhookRequest() {
+    }
+
     private UpdateWebhookRequest(Builder builder) {
         setAddress(builder.address);
         setTopic(builder.topic);

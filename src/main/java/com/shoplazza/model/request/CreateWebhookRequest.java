@@ -50,6 +50,9 @@ public class CreateWebhookRequest {
         this.topic = topic;
     }
 
+    public CreateWebhookRequest() {
+    }
+
     public static final class Builder {
         private String address;
         private String topic;

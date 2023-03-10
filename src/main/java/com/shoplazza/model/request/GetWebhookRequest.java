@@ -59,6 +59,9 @@ public class GetWebhookRequest {
     @XmlElement(name = "updated_at_max")
     private Date updatedAtMax;
 
+    public GetWebhookRequest() {
+    }
+
     public String getAddress() {
         return address;
     }

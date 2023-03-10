@@ -39,8 +39,6 @@ import java.util.stream.Collectors;
 public class ShoplazzaSdk {
 
     private static final Logger log = LoggerFactory.getLogger(ShoplazzaSdk.class);
-
-    private static final ObjectMapper objectMapper = new ObjectMapper();
     static final String API_VERSION_PREFIX = "openapi";
     static final String RETRY_AFTER_HEADER = "Retry-After";
     static final String ACCESS_TOKEN_HEADER = "Access-Token";

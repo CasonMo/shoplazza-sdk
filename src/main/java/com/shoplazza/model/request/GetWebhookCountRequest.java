@@ -27,6 +27,9 @@ public class GetWebhookCountRequest {
      */
     private String topic;
 
+    public GetWebhookCountRequest() {
+    }
+
     private GetWebhookCountRequest(Builder builder) {
         setAddress(builder.address);
         setTopic(builder.topic);

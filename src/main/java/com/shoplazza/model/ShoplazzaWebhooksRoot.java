@@ -18,6 +18,9 @@ public class ShoplazzaWebhooksRoot{
 		return new Builder();
 	}
 
+	public ShoplazzaWebhooksRoot() {
+	}
+
 	public List<ShoplazzaWebhook> getWebhooks(){
 		return webhooks;
 	}
